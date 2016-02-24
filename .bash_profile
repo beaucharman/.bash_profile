@@ -7,15 +7,48 @@ parse_git_branch() {
 }
 PS1='\e[0;35m⌘\e[0;34m \w/\e[0m\e[0;32m$(parse_git_branch)\e[0m '
 
+# Git: shortcuts
+gits() {
+  git status
+}
+gitc() {
+  git checkout $1
+}
+gitcb() {
+  git checkout -b $1
+}
+gitaa() {
+  git add .
+}
+gitac() {
+  git commit -m $1
+}
+gitp() {
+  git push origin
+}
+gitpo() {
+  git pull origin
+}
+
 # Git: Help with varification issues
 export GIT_SSL_NO_VERIFY=true
 
 # npm: shortcuts
-npmi() { npm install $1 }
-npmig() { npm install $1 -g }
-npmis() { npm install $1 --save }
-npmisd() { npm install $1 --save-dev }
-npmrefresh() { rm -rf node_modules/ && npm install }
+npmi() {
+  npm install $1
+}
+npmig() {
+  npm install $1 -g
+}
+npmis() {
+  npm install $1 --save
+}
+npmisd() {
+  npm install $1 --save-dev
+}
+npmrefresh() {
+  rm -rf node_modules/ && npm install
+}
 
 # Chrome: Google a term from the command line
 google() {
