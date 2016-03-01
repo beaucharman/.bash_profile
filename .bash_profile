@@ -1,9 +1,12 @@
+# Set PATH
+export PATH=/usr/local/bin:$PATH
+
 # Terminal: Show aliases
 showa() { /usr/bin/grep --color=always -i -a1 $@ ~/Library/init/bash/aliases.bash | grep -v '^\s*$' | less -FSRXc ; }
 
 # Terminal: Pretty Git highlighting in Terminal
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 PS1='\e[0;35m⌘\e[0;34m \w/\e[0m\e[0;32m$(parse_git_branch)\e[0m '
 
@@ -52,14 +55,14 @@ npmrefresh() {
 
 # Chrome: Google a term from the command line
 google() {
-    local s="$_"
-    local query=
+  local s="$_"
+  local query=
     case "$1" in
-        '')   ;;
-        that) query="search?q=${s//[[:space:]]/+}" ;;
-        *)    s="$*"; query="search?q=${s//[[:space:]]/+}" ;;
-    esac
-    open /Applications/Google\ Chrome.app/ "http://www.google.com/${query}"
+      '')   ;;
+      that) query="search?q=${s//[[:space:]]/+}" ;;
+      *)    s="$*"; query="search?q=${s//[[:space:]]/+}" ;;
+  esac
+  open /Applications/Google\ Chrome.app/ "http://www.google.com/${query}"
 }
 
 # Finder: Show and hide hidden files
@@ -67,8 +70,8 @@ alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killal
 alias hideshown='defaults write com.apple.finder AppleShowAllFiles FALSE; killall Finder'
 
 # http://superuser.com/questions/637312/uglifyjs-command-not-found
-export PATH=$PATH:/usr/local/share/npm/bin/
+# export PATH=$PATH:/usr/local/share/npm/bin/
 
 # nvm: Necessary for NVM https://github.com/creationix/nvm/issues/576
-export NVM_DIR=~/.nvm
-source ~/.nvm/nvm.sh
+# export NVM_DIR=~/.nvm
+# source ~/.nvm/nvm.sh
