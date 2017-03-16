@@ -39,4 +39,3 @@ defaults write com.apple.screencapture type jpg
 
 # Set more frequent updates
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
-
