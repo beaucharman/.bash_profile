@@ -33,14 +33,14 @@
   alias gitrecent='git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"'
 
 # Git: Helpers
-  gitc() { git checkout $1 }
-  gitdev() { git checkout develop }
-  gitcb() { git checkout -b $1 }
-  gitp() { git pull origin $1 }
-  gitup() { git push origin $1 }
-  gita() { git add . }
-  gitcm() { git commit -m $1 }
-  gits() { git status }
+  gitc() { git checkout $1; }
+  gitdev() { git checkout develop; }
+  gitcb() { git checkout -b $1; }
+  gitp() { git pull origin $1; }
+  gitup() { git push origin $1; }
+  gita() { git add .; }
+  gitcm() { git commit -m $1; }
+  gits() { git status; }
 
 # Finder: Show and hide hidden files
   alias showhidden='defaults write com.apple.finder AppleShowAllFiles TRUE; killall Finder'
@@ -52,7 +52,7 @@
 
 # Change Prompt
 # ------------------------------------------------------------
-export PS1="🦄 ⌘ ➜ "
+# export PS1="🦄 ⌘ ➜ "
 
 # Set Paths
 # ------------------------------------------------------------
