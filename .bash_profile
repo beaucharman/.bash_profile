@@ -18,7 +18,6 @@
 #
 #  ---------------------------------------------------------------------------
 
-
 #   -------------------------------
 #   0. MISC
 #   -------------------------------
@@ -52,10 +51,10 @@
 
 # Change Prompt
 # ------------------------------------------------------------
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1="🦄 ⌘ (\W)\033[32m\]\$(parse_git_branch)\[\033[00m\] ➜ "
+  parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  }
+  export PS1="🦄 ⌘ (\W)\033[95m\]\$(parse_git_branch)\[\033[00m\] ➜  "
 
 # Set Paths
 # ------------------------------------------------------------
@@ -68,12 +67,12 @@ export PS1="🦄 ⌘ (\W)\033[32m\]\$(parse_git_branch)\[\033[00m\] ➜ "
   export EDITOR=/usr/bin/atom
 
 # nvm: Necessary for NVM https://github.com/creationix/nvm/issues/576
-# export NVM_DIR=~/.nvm
-# source ~/.nvm/nvm.sh
-# alias nvmreload='source ~/.nvm/nvm.sh'
+  export NVM_DIR=~/.nvm
+  source ~/.nvm/nvm.sh
+  alias nvmreload='source ~/.nvm/nvm.sh'
 
 # Set the screen capture file type
   defaults write com.apple.screencapture type jpg
 
 # Set more frequent updates
-  defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+  defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1;
