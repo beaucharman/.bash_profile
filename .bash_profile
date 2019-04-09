@@ -51,10 +51,10 @@
 
 # Change Prompt
 # ------------------------------------------------------------
-  parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-  }
-  export PS1="🦄 ⌘ (\W)\033[95m\]\$(parse_git_branch)\[\033[00m\] ➜  "
+  # parse_git_branch() {
+  #   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  # }
+  # export PS1="🦄 ⌘ (\W)\033[95m\]\$(parse_git_branch)\[\033[00m\] ➜  "
 
 # Set Paths
 # ------------------------------------------------------------
@@ -70,6 +70,9 @@
   export NVM_DIR=~/.nvm
   source ~/.nvm/nvm.sh
   alias nvmreload='source ~/.nvm/nvm.sh'
+
+# NPM helpers
+  alias npmrm='rm -fr node_modules/ && nvm use && npm install'
 
 # Set the screen capture file type
   defaults write com.apple.screencapture type jpg
